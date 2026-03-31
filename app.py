@@ -23,21 +23,18 @@ def detect_emotion():
     prediction = model.predict([cleaned_text])[0]
     probabilities = model.predict_proba([cleaned_text])[0]
     confidence = max(probabilities) * 100
-
     emoji_map = {
         "joy": "😊",
         "sadness": "😢",
         "anger": "😡",
         "fear": "😨",
         "love": "❤️",
-        "surprise": "😲"
-    }
+        "surprise": "😲" }
 
     emoji = emoji_map.get(prediction, "")
     print(f" Predicted Emotion: {prediction.upper()} {emoji}")
     print(f" Confidence: {confidence:.2f}%")
 
-    
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     with open("history.txt", "a", encoding="utf-8") as file:
@@ -65,7 +62,6 @@ def clear_history():
     else:
         print(" No history file found.")
 
-
 def show_help():
     print("""
 Available Options:
@@ -88,7 +84,6 @@ def main():
         print("5. Exit")
 
         choice = input("Enter your choice: ").strip()
-
         if choice == "1":
             detect_emotion()
         elif choice == "2":
