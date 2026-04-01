@@ -69,8 +69,7 @@ Available Options:
 2. View History - Show previous predictions
 3. Clear History - Delete saved prediction history
 4. Help - Show this help menu
-5. Exit - Close the application
-""")
+5. Exit - Close the application""")
 
 def main():
     while True:
